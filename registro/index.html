@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Cliente</title>
+    <link rel="stylesheet" href="/css/stylesRegistro.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="/img/Logo R-Escobedo Software-modified.png" alt="Logo de la empresa" class="logo">
+    </div>
+    <div class="container">
+        <h2>Formulario de Cliente</h2>
+        <form id="clienteForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="fechaInstalacion">Fecha de Instalación:</label>
+            <input type="date" id="fechaInstalacion" name="fechaInstalacion" required>
+
+            <label for="equipos">Equipos:</label>
+            <input type="text" id="equipos" name="equipos" required>
+
+            <button type="button" onclick="guardarCliente();">Guardar</button>
+            <button type="button" onclick="redireccionar();">Mostrar Usuarios</button>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>

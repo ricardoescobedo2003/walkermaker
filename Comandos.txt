@@ -1,0 +1,54 @@
+CREATE USER 'dni'@'localhost' IDENTIFIED BY 'MinuzaFea265/';
+GRANT ALL PRIVILEGES ON *.* TO 'dni'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+
+
+
+
+CREATE DATABASE doblenet;
+
+
+CREATE TABLE clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(45) NOT NULL,
+    direccion VARCHAR(150),
+    telefono VARCHAR(15),
+    fechaInstalacion VARCHAR(100),
+    equipos VARCHAR(100)
+);
+
+
+CREATE TABLE pagos (
+    id_pago INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    fecha VARCHAR(20) NOT NULL,
+    monto DECIMAL(10,2) NOT NULL,
+    concepto VARCHAR(255) NOT NULL
+);
+
+
+INSERT INTO pagos (nombre, fecha, monto) VALUES
+    ('Cliente1', '2024-03-06', 500.00);
+
+------- LEVANTAR EL SERVIDOR APACHE VIRTUAL HOST -----
+sudo mkdir /var/www/your_domain
+sudo chown -R $USER:$USER /var/www/your_domain
+sudo chmod -R 755 /var/www/your_domain
+sudo nano /etc/apache2/sites-available/your_domain.conf
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName your_domain
+    ServerAlias www.your_domain
+    DocumentRoot /var/www/your_domain
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+sudo a2ensite your_domain.conf
+sudo a2dissite 000-default.conf
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+------- LEVANTAR EL SERVIDOR APACHE VIRTUAL HOST -----
