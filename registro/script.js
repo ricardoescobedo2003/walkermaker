@@ -5,6 +5,7 @@ function guardarCliente() {
     var telefono = document.getElementById('telefono').value;
     var fechaInstalacion = document.getElementById('fechaInstalacion').value;
     var equipos = document.getElementById('equipos').value;
+    var mensualidad = document.getElementById('mensualidad').value;
 
     // Enviar datos a través de AJAX a PHP
     var xmlhttp = new XMLHttpRequest();
@@ -15,10 +16,13 @@ function guardarCliente() {
     };
     xmlhttp.open("POST", "guardar_cliente.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send("nombre=" + nombre + "&direccion=" + direccion + "&telefono=" + telefono + "&fechaInstalacion=" + fechaInstalacion + "&equipos=" + equipos);
+    xmlhttp.send("nombre=" + nombre + "&direccion=" + direccion + "&telefono=" + telefono + "&fechaInstalacion=" + fechaInstalacion + "&equipos=" + equipos + '&mensualidad=' + mensualidad);
 }
 
 function redireccionar() {
     // Puedes cambiar "otra_pagina.html" por la URL a la que quieres redireccionar.
     window.location.href = "/consulta/index.html";
+  }
+  function searchUsuario(){
+    window.location.href = "/busquedaEdicion/index.html"
   }

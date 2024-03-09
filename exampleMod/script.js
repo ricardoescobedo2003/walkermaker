@@ -1,62 +1,43 @@
-document.addEventListener("DOMContentLoaded", function() {
-  cargarClientes();
-});
+function buscarCliente() {
+  var nombreCliente = document.getElementById('clienteNombre').value;
 
-function cargarClientes() {
-  // Llamada AJAX para obtener datos de clientes desde PHP
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-          var clientes = JSON.parse(xhr.responseText);
-          mostrarClientes(clientes);
-      }
+  // Realiza una petición AJAX para buscar el cliente en la base de datos
+  // y mostrar los resultados en el div con id "resultados"
+
+  // En este ejemplo, se asume que la respuesta es un JSON con la información del cliente
+  var clienteInfo = {
+      nombre: "Cliente Ejemplo",
+      fechasPago: ["2024-03-10", "2024-04-10"],
+      saldoPendiente: 150.00
   };
-  xhr.open("GET", "clientes.php", true);
-  xhr.send();
-}
 
-function mostrarClientes(clientes) {
-  var table = document.getElementById("clientesTable");
-  table.innerHTML = "<tr><th>ID</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Fecha de Instalación</th><th>Equipos</th><th>Acciones</th></tr>";
-
-  for (var i = 0; i < clientes.length; i++) {
-      var row = table.insertRow(-1);
-      var cellId = row.insertCell(0);
-      var cellNombre = row.insertCell(1);
-      var cellDireccion = row.insertCell(2);
-      var cellTelefono = row.insertCell(3);
-      var cellFechaInstalacion = row.insertCell(4);
-      var cellEquipos = row.insertCell(5);
-      var cellAcciones = row.insertCell(6);
-
-      cellId.innerHTML = clientes[i].id_cliente;
-      cellNombre.innerHTML = clientes[i].nombre;
-      cellDireccion.innerHTML = clientes[i].direccion;
-      cellTelefono.innerHTML = clientes[i].telefono;
-      cellFechaInstalacion.innerHTML = clientes[i].fechaInstalacion;
-      cellEquipos.innerHTML = clientes[i].equipos;
-
-      var btnEliminar = document.createElement("button");
-      btnEliminar.innerText = "Eliminar";
-      btnEliminar.onclick = function() {
-          eliminarCliente(clientes[i].id_cliente);
-      };
-      cellAcciones.appendChild(btnEliminar);
-
-      var btnModificar = document.createElement("button");
-      btnModificar.innerText = "Modificar";
-      btnModificar.onclick = function() {
-          modificarCliente(clientes[i].id_cliente);
-      };
-      cellAcciones.appendChild(btnModificar);
+  var resultadosDiv = document.getElementById('resultados');
+  resultadosDiv.innerHTML = `<h2>Información del Cliente</h2>`;
+  resultadosDiv.innerHTML += `<p><strong>Nombre:</strong> ${clienteInfo.nombre}</p>`;
+  
+  if (clienteInfo.fechasPago.length > 0) {
+      resultadosDiv.innerHTML += `<h3>Fechas de Pago Pendientes</h3>`;
+      clienteInfo.fechasPago.forEach(fecha => {
+          resultadosDiv.innerHTML += `<p>${fecha}</p>`;
+      });
+  } else {
+      resultadosDiv.innerHTML += `<p>No hay fechas de pago pendientes.</p>`;
   }
+
+  resultadosDiv.innerHTML += `<h3>Saldo Pendiente</h3>`;
+  resultadosDiv.innerHTML += `<p>${clienteInfo.saldoPendiente} USD</p>`;
+
+  // Mostrar el formulario de pago
+  document.getElementById('formPago').style.display = 'block';
 }
 
-function eliminarCliente(idCliente) {
-  // Llamada AJAX para eliminar cliente en PHP
-  // Actualizar la lista de clientes después de la eliminación
-}
+function registrarPago() {
+  var fechaPago = document.getElementById('fechaPago').value;
+  var monto = document.getElementById('monto').value;
 
-function modificarCliente(idCliente) {
-  // Implementar la lógica para modificar un cliente (puedes usar un modal, por ejemplo)
+  // Realiza una petición AJAX para registrar el pago en la base de datos
+
+  // En este ejemplo, se asume que la respuesta es un mensaje de éxito
+  var mensajeExito = "¡Pago registrado con éxito!";
+  alert(mensajeExito);
 }

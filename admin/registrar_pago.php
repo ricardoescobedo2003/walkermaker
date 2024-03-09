@@ -16,10 +16,10 @@ if ($conn->connect_error) {
 $nombre = $_POST['nombre'];
 $fecha = $_POST['fecha'];
 $monto = $_POST['monto'];
-$concepto = $_POST['concepto']; // Este campo está en el formulario, pero no se está utilizando en la inserción
+// $concepto = $_POST['concepto']; // Comentado porque el campo no existe en el formulario
 
 // Realizar la inserción en la tabla pagos
-$query = "INSERT INTO pagos (nombre, fecha, monto, concepto) VALUES ('$nombre', '$fecha', '$monto', '$concepto')";
+$query = "INSERT INTO pagos (nombre, fecha, monto) VALUES ('$nombre', '$fecha', '$monto')";
 
 if ($conn->query($query) === TRUE) {
     echo "Pago registrado con éxito";

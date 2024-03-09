@@ -15,7 +15,8 @@ CREATE TABLE clientes (
     direccion VARCHAR(150),
     telefono VARCHAR(15),
     fechaInstalacion VARCHAR(100),
-    equipos VARCHAR(100)
+    equipos VARCHAR(100),
+    mensualidad VARCHAR(255)
 );
 
 
@@ -23,8 +24,7 @@ CREATE TABLE pagos (
     id_pago INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     nombre VARCHAR(255) NOT NULL,
     fecha VARCHAR(20) NOT NULL,
-    monto DECIMAL(10,2) NOT NULL,
-    concepto VARCHAR(255) NOT NULL
+    monto DECIMAL(10,2) NOT NULL
 );
 
 

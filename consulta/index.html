@@ -3,53 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/stylesConsulta.css">
     <link rel="shortcut icon" href="/img/Logo R-Escobedo Software-modified.png"> 
-
     <title>Mostrar los Usuarios</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="realizarConsulta()">Mostrar</a></li>
+                <li><a href="#" onclick="redireccionar()">Registrar Cliente</a></li>
+                <li><a href="#" onclick="modificar()">Modificar</a></li>
+                <li><a href="#" onclick="inicio()">Inicio</a></li>
+                
+            </ul>
+        </nav>
+    </header>
 
-<h2>Mostrar a los Usuarios</h2>
+    <h2>Mostrar a los Usuarios</h2>
 
-<button onclick="realizarConsulta()">Mostrar</button>
-<button onclick="redireccionar()">Registrar Cliente</button>
-<button onclick="inicio()">Inicio</button>
-<div id="resultados"></div>
+    <div id="resultados"></div>
 
-<script>
-function realizarConsulta() {
-    // Realizar una solicitud FETCH al backend
-    fetch('backend.php')
-        .then(response => response.json())
-        .then(resultados => mostrarResultados(resultados))
-        .catch(error => console.error('Error:', error));
-}
-
-function mostrarResultados(resultados) {
-    var resultadosDiv = document.getElementById("resultados");
-
-    if (resultados.length > 0) {
-        // Crear tabla de resultados
-        var tabla = "<table><tr><th>ID Cliente</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>FechaInstalacion</th><th>Equipos</th></tr>";
-        for (var i = 0; i < resultados.length; i++) {
-            tabla += "<tr><td>" + resultados[i].id_cliente + "</td><td>" + resultados[i].nombre + "</td><td>" + resultados[i].direccion + "</td><td>" + resultados[i].telefono + "</td><td>" + resultados[i].fechaInstalacion + "</td>" 
-                + "<td>" + resultados[i].equipos + "</td>";
+    <script>
+        function realizarConsulta() {
+            // Realizar una solicitud FETCH al backend
+            fetch('backend.php')
+                .then(response => response.json())
+                .then(resultados => mostrarResultados(resultados))
+                .catch(error => console.error('Error:', error));
         }
-        tabla += "</table>";
-        resultadosDiv.innerHTML = tabla;
-    } else {
-        resultadosDiv.innerHTML = "<p>No se encontraron resultados</p>";
-    }
-}
-function redireccionar() {
-    // Puedes cambiar "otra_pagina.html" por la URL a la que quieres redireccionar.
-    window.location.href = "/registro/index.html";
-  }
-function inicio(){
-    window.location.href = "/admin/index.html";
-}
-</script>
 
+        function mostrarResultados(resultados) {
+            var resultadosDiv = document.getElementById("resultados");
+
+            if (resultados.length > 0) {
+                // Crear tabla de resultados
+                var tabla = "<table><tr><th>ID Cliente</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Fecha Instalación</th><th>Equipos</th><th>Mensualidad</th></tr>";
+                for (var i = 0; i < resultados.length; i++) {
+                    tabla += "<tr><td>" + resultados[i].id_cliente + "</td><td>" + resultados[i].nombre + "</td><td>" + resultados[i].direccion + "</td><td>" + resultados[i].telefono + "</td><td>" + resultados[i].fechaInstalacion + "</td>" 
+                        + "<td>" + resultados[i].equipos + "</td><td>" + resultados[i].mensualidad + "</td></tr>";
+                }
+                tabla += "</table>";
+                resultadosDiv.innerHTML = tabla;
+            } else {
+                resultadosDiv.innerHTML = "<p>No se encontraron resultados</p>";
+            }
+        }
+
+        function redireccionar() {
+            // Puedes cambiar "otra_pagina.html" por la URL a la que quieres redireccionar.
+            window.location.href = "/registro/index.html";
+        }
+
+        function inicio(){
+            window.location.href = "/admin/index.html";
+        }
+        function modificar(){
+            window.location.href = "/busquedaEdicion/index.html"
+        }
+    </script>
 </body>
 </html>

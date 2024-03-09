@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 }
 
 // Realizar la consulta
-$sql = "SELECT id_pago, nombre, fecha, monto, concepto FROM pagos";
+$sql = "SELECT id_pago, nombre, fecha, monto FROM pagos";
 $result = $conn->query($sql);
 
 // Almacenar resultados en un array

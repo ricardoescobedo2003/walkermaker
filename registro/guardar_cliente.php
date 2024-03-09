@@ -18,9 +18,10 @@ $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
 $fechaInstalacion = $_POST['fechaInstalacion'];
 $equipos = $_POST['equipos'];
+$mensualidad = $_POST['mensualidad'];
 
 // Insertar datos en la tabla clientes
-$sql = "INSERT INTO clientes (nombre, direccion, telefono, fechaInstalacion, equipos) VALUES ('$nombre', '$direccion', '$telefono', '$fechaInstalacion', '$equipos')";
+$sql = "INSERT INTO clientes (nombre, direccion, telefono, fechaInstalacion, equipos, mensualidad) VALUES ('$nombre', '$direccion', '$telefono', '$fechaInstalacion', '$equipos', '$mensualidad')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Cliente guardado correctamente";
