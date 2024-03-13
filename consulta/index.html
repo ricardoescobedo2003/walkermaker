@@ -7,11 +7,11 @@
     <link rel="shortcut icon" href="/img/Logo R-Escobedo Software-modified.png"> 
     <title>Mostrar los Usuarios</title>
 </head>
-<body>
+<body onload="realizarConsulta()">
+    
     <header>
         <nav>
             <ul>
-                <li><a href="#" onclick="realizarConsulta()">Mostrar</a></li>
                 <li><a href="#" onclick="redireccionar()">Registrar Cliente</a></li>
                 <li><a href="#" onclick="modificar()">Modificar</a></li>
                 <li><a href="#" onclick="inicio()">Inicio</a></li>
@@ -38,11 +38,10 @@
 
             if (resultados.length > 0) {
                 // Crear tabla de resultados
-                var tabla = "<table><tr><th>ID Cliente</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Fecha Instalación</th><th>Equipos</th><th>Mensualidad</th></tr>";
+                var tabla = "<table><tr><th>ID Cliente</th><th>Nombre</th><th>Dirección</th><th>Localidad</th><th>Fecha Instalacion</th><th>Equipos</th><th>Mensualidad</th><th>Telefono</th><th>Comentarios</tr>";
                 for (var i = 0; i < resultados.length; i++) {
-                    tabla += "<tr><td>" + resultados[i].id_cliente + "</td><td>" + resultados[i].nombre + "</td><td>" + resultados[i].direccion + "</td><td>" + resultados[i].telefono + "</td><td>" + resultados[i].fechaInstalacion + "</td>" 
-                        + "<td>" + resultados[i].equipos + "</td><td>" + resultados[i].mensualidad + "</td></tr>";
-                }
+                    tabla += "<tr><td>" + resultados[i].id_cliente + "</td><td>" + resultados[i].nombre + "</td><td>" + resultados[i].direccion + "</td><td>" + resultados[i].localidad + "</td><td>" + resultados[i].fechaInstalacion + "</td>" 
+                        + "<td>" + resultados[i].equipos + "</td><td>" + resultados[i].mensualidad + "</td>" + "<td>" + resultados[i].telefono + "</td><td>" + resultados[i].comentarios + "</td></tr>"                }
                 tabla += "</table>";
                 resultadosDiv.innerHTML = tabla;
             } else {

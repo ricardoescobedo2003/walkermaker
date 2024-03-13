@@ -12,9 +12,9 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["nombre"];
+    $localidad = $_POST["localidad"];
 
-    $sql = "SELECT * FROM clientes WHERE nombre LIKE '%$nombre%'";
+    $sql = "SELECT * FROM clientes WHERE localidad LIKE '%$localidad%'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

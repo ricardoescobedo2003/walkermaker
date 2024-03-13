@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="img/watr-system.png"> 
+    <link rel="stylesheet" href="/css/stylesConsulta.css">
 
     <title>Mostrar los Pagos</title>
 </head>
-<body>
+<body onload="realizarConsulta()">
 
-<h2>Mostrar a los Pagos</h2>
 
-<button onclick="realizarConsulta()">Mostrar</button>
-<button onclick="redireccionar()">Registrar Pago</button>
-
+    <header>
+    <nav>
+        <ul>
+            <li><a href="/registro/index.html" onclick="redireccionar()">Registrar Cliente</a></li>
+            <li><a href="/busquedaEdicion/index.html" onclick="modificar()">Modificar</a></li>
+            <li><a href="/admin/index.html" onclick="inicio()">Inicio</a></li>
+            
+        </ul>
+    </nav>
+</header>
 <div id="resultados"></div>
 
 <script>

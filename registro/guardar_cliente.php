@@ -16,12 +16,13 @@ if ($conn->connect_error) {
 $nombre = $_POST['nombre'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
+$localidad = $_POST['localidad'];
 $fechaInstalacion = $_POST['fechaInstalacion'];
 $equipos = $_POST['equipos'];
 $mensualidad = $_POST['mensualidad'];
-
+$comentarios = $_POST['comentarios'];
 // Insertar datos en la tabla clientes
-$sql = "INSERT INTO clientes (nombre, direccion, telefono, fechaInstalacion, equipos, mensualidad) VALUES ('$nombre', '$direccion', '$telefono', '$fechaInstalacion', '$equipos', '$mensualidad')";
+$sql = "INSERT INTO clientes (nombre, direccion, telefono, fechaInstalacion, equipos, mensualidad, localidad, comentarios) VALUES ('$nombre', '$direccion', '$telefono', '$fechaInstalacion', '$equipos', '$mensualidad', '$localidad', '$comentarios')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Cliente guardado correctamente";

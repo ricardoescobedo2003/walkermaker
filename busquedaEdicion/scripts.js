@@ -14,6 +14,24 @@ function buscarUsuario() {
     xhr.send("nombre=" + nombre);
 }
 
+
+function busquedaLocalidad() {
+    const localidad = document.getElementById("localidad").value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "searchLocalidad.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            document.getElementById("resultContainer").innerHTML = xhr.responseText;
+        }
+    };
+
+    xhr.send("localidad=" + localidad);
+}
+
+
 function eliminarUsuario(id_cliente) {
     const confirmacion = confirm("¿Estás seguro de que deseas eliminar este usuario?");
     

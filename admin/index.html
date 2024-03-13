@@ -15,7 +15,6 @@
             <a href="/homePage/index.html">Buscar Pago</a>
             <a href="/consulta/index.html">Mostrar Usuarios</a>
             <a href="/busquedaEdicion/index.html">Modificar Usuario</a>
-
             <a href="/index.html">Cerrar Sesion</a>
 
         </div>
@@ -25,7 +24,7 @@
         <h1>Registro de Pago</h1>
         <form id="pagoForm" onsubmit="registrarPago(); return false;">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" required autofocus>
 
             <label for="fecha">Fecha de Pago:</label>
             <input type="date" id="fecha" name="fecha" required>
