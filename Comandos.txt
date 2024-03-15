@@ -16,7 +16,9 @@ CREATE TABLE clientes (
     telefono VARCHAR(15),
     fechaInstalacion VARCHAR(100),
     equipos VARCHAR(100),
-    mensualidad VARCHAR(255)
+    mensualidad VARCHAR(255),
+    localidad VARCHAR(255),
+    comentarios TEXT
 );
 
 

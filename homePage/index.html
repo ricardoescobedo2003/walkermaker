@@ -10,10 +10,9 @@
 <body>
     <div class="container">
         <div class="banner">
+            <p>Opcion para buscar todos los pagos echos por un cliente en especifico. Para tener un detalle de todos los pagos del cliente</p>
             <div class="navigation">
-                <a href="/admin/index.html">Registrar</a>
-                <a href="/consulta/index.html">Mostrar Usuarios</a>
-                <a href="/consulta/consulta_pagos/index.html">Historial de Pagos</a>
+                <a href="/admin/index.html">Home</a>
             </div>
         </div>
 
@@ -21,14 +20,10 @@
             <h1 class="mb-4">Búsqueda de Pagos</h1>
             <form id="buscarForm">
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Buscar por Nombre:</label>
+                    <label for="nombre" class="form-label">Nombre del cliente:</label>
                     <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
                 </div>
 
-                <div class="mb-3">
-                    <label for="fecha" class="form-label">Buscar por Fecha:</label>
-                    <input type="date" id="fecha" name="fecha" class="form-control" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
-                </div>
 
                 <button type="button" class="btn btn-primary" onclick="buscarPago()">Buscar</button>
             </form>

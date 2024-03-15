@@ -32,24 +32,24 @@
 <body>
     <nav>
         <ul>
-            <li><a href="" onclick="guardarCliente()">Registrar Cliente</a></li>
-            <li><a href="/busquedaEdicion/index.html" onclick="modificar()">Modificar</a></li>
-            <li><a href="/admin/index.html" onclick="inicio()">Inicio</a></li>
+            <li><a href="" onclick="guardarCliente()">Guardar Cliente</a></li>
+            <li><a href="/admin/index.html" onclick="inicio()">Home</a></li>
         </ul>
     </nav>
 
     <div class="header"></div>
     <div class="container">
         <h2>Formulario de Cliente</h2>
+        <p>Ingresa los datos en los campos para guardar el cliente</p>
         <form id="clienteForm">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej Ricardo Escobedo">
 
             <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" required>
+            <input type="text" id="direccion" name="direccion" required placeholder="Ej Joaquin Amaro">
 
             <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required>
+            <input type="tel" id="telefono" name="telefono" required placeholder="Ej 4981442266">
 
             <label for="localidad">Localidad:</label>
             <select id="localidad" name="localidad" required>
@@ -77,12 +77,12 @@
             <input type="date" id="fechaInstalacion" name="fechaInstalacion" required>
 
             <label for="equipos">Equipos:</label>
-            <input type="text" id="equipos" name="equipos" required>
+            <input type="text" id="equipos" name="equipos" required placeholder="Ej LiteBeam M5, TpLink840N">
 
             <label for="mensualidad">Mensualidad</label>
-            <input type="number" id="mensualidad" name="mensualidad" required>
+            <input type="number" id="mensualidad" name="mensualidad" required placeholder="Ej 450">
             
-            <label for="comentarios">Comentarios:</label>
+            <label for="comentarios" aria-placeholder="Se coloco un switch para una computadora extra">Comentarios:</label>
             <textarea id="comentarios" name="comentarios" rows="4"></textarea>
 
         </form>
