@@ -1,25 +1,22 @@
-function buscarCliente() {
-    var nombre = document.getElementById("nombre").value;
+// Ejecutar la función para cargar los nombres de clientes cuando se cargue la página
+window.onload = function() {
+    cargarClientes();
+};
 
-    // Realiza una petición AJAX para buscar el cliente en la base de datos
-    fetch('buscar_cliente.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: 'nombre=' + encodeURIComponent(nombre),
-    })
+function cargarClientes() {
+    // Realiza una petición AJAX para obtener los nombres de clientes desde PHP
+    fetch('buscar_clientes.php')
     .then(response => response.json())
     .then(data => {
         // Procesar la respuesta del servidor
-        if (data.success) {
-            // Mostrar la información del cliente encontrado
-            alert("Cliente encontrado:\n" + data.clienteInfo);
-            // Continuar con el registro de pago
-            registrarPago();
-        } else {
-            alert("Cliente no encontrado");
-        }
+        const selectClientes = document.getElementById("nombre");
+
+        // Agregar los nombres de clientes a la lista desplegable
+        data.forEach(nombre => {
+            const option = document.createElement("option");
+            option.text = nombre;
+            selectClientes.add(option);
+        });
     })
     .catch(error => {
         console.error('Error:', error);

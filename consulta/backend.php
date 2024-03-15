@@ -2,13 +2,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-// Datos de conexión a la base de datos
 $servername = "localhost";
 $username = "dni";
 $password = "MinuzaFea265/";
 $dbname = "doblenet";
 
-// Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar la conexión
@@ -36,5 +34,4 @@ $conn->close();
 header('Content-Type: application/json');
 echo json_encode($clientes);
 ?>
-
 

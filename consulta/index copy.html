@@ -20,7 +20,29 @@
         </nav>
     </header>
 
-    <h2>Mostrar a los Usuarios</h2>
+    <p>Realizar un filtro por localidad:</p>
+    <label for="localidad">Localidad:</label>
+    <select id="localidad" name="localidad" required>
+        <option value="Tierra Blanca">Tierra Blanca </option>
+        <option value="Playas del Refugio">Playas del Refugio</option>
+        <option value="General Lauro">General Lauro</option>
+        <option value="Colonia Pozo Colorado">Colonia Pozo Colorado</option>
+        <option value="Maravillas">Maravillas</option>
+        <option value="Colonia Madero">Colonia Madero</option>
+        <option value="Colonia Lazaro Cardenas">Colonia Lazaro Cardenas</option>
+        <option value="Noria de Molinos">Noria de Molinos</option>
+        <option value="La Manga">La Manga</option>
+        <option value="El Tepetate">El Tepetate</option>
+        <option value="Carrilo Puerto">Carrilo Puerto</option>
+        <option value="Jarillas">Jarillas</option>
+        <option value="Noria del Borrego">Noria del Borrego</option>
+        <option value="La Victoria">La Victoria</option>
+        <option value="La Victoria">El Prieto</option>
+        <option value="Guadalupe de Atlas">Guadalupe de Atlas</option>
+        <option value="El Rascon">El Rascon</option>
+        <!-- Agrega más opciones según sea necesario -->
+    </select>
+    <button type="button" onclick="busquedaLocalidad()">Filtro Localidad</button>   
 
     <div id="resultados"></div>
 

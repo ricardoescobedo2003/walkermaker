@@ -1,7 +1,6 @@
 <?php
 require('fpdf/fpdf.php');
 
-// Conectar a la base de datos (reemplaza los valores con los de tu entorno)
 $servername = "localhost";
 $username = "dni";
 $password = "MinuzaFea265/";
@@ -70,15 +69,17 @@ if ($result !== false) {
     $pdf->Cell(0, 10, 'Informacion de contacto:', 0, 1, 'L');
     $pdf->SetFont('Arial', '', 10);
     $pdf->Cell(0, 10, 'Telefono: +123456789', 0, 1, 'L');
-    $pdf->Cell(0, 10, 'Correo electronico: info@example.com', 0, 1, 'L');
-    $pdf->Cell(0, 10, 'Compania: Nombre de la Compania', 0, 1, 'L');
-
+    $pdf->Cell(0, 10, 'Correo electronico: ricardo.escobedo@doblenetsystem.com', 0, 1, 'L');
+    $pdf->Cell(0, 10, 'Compania: DoblenetSystem', 0, 1, 'L');
+    $pdf->Cell(0, 10, 'Software by R-Escobedo', 0, 1, 'L');
+    
     // Guardar el PDF como archivo
     $pdfFileName = 'comprobante.pdf';
     $pdf->Output($pdfFileName, 'F');
+    
+    // Mostrar enlace para descargar el PDF con estilos
+    echo '<a href="' . $pdfFileName . '" download style="color: blue;">Descargar Comprobante</a>';
 
-    // Mostrar enlace para descargar el PDF
-    echo '<a href="' . $pdfFileName . '" download>Descargar Comprobante</a>';
 } else {
     echo "Error en la consulta SQL.";
 }

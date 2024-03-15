@@ -1,5 +1,4 @@
 <?php
-// Configuración de la conexión a la base de datos (ajusta según tus credenciales)
 
 $servername = "localhost";
 $username = "dni";

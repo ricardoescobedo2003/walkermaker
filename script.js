@@ -6,7 +6,10 @@ function login() {
     // Verificar las credenciales
     if (usernameInput === 'ricardo.escobedo' && passwordInput === '21060212') {
         window.location.href="/admin/index.html"
-    } else {
+    } 
+    if (usernameInput == 'usuario@doblenet' && passwordInput == 'doblenetsystem'){
+        window.location.href="/admin/index.html"
+    }else {
         // Credenciales inválidas, mostrar un mensaje de error
         alert('Credenciales incorrectas. Inténtalo de nuevo.');
     }

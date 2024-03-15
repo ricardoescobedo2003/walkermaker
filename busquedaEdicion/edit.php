@@ -1,10 +1,11 @@
 <?php
-$host = "localhost";
-$usuario = "dni";
-$contrasena = "MinuzaFea265/";
-$base_datos = "doblenet";
 
-$conn = new mysqli($host, $usuario, $contrasena, $base_datos);
+$servername = "localhost";
+$username = "dni";
+$password = "MinuzaFea265/";
+$dbname = "doblenet";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);

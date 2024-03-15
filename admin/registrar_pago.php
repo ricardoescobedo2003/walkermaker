@@ -1,5 +1,4 @@
 <?php
-// Conectar a la base de datos (reemplaza los valores con los de tu entorno)
 $servername = "localhost";
 $username = "dni";
 $password = "MinuzaFea265/";
