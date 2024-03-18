@@ -64,3 +64,8 @@ sudo a2dissite 000-default.conf
 sudo apache2ctl configtest
 sudo systemctl restart apache2
 ------- LEVANTAR EL SERVIDOR APACHE VIRTUAL HOST -----
+
+
+----------INSTALACION DE PHP --------------
+sudo apt-get install php mysql-server php-mysql
+----------INSTALACION DE PHP ---------------
