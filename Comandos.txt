@@ -28,6 +28,11 @@ CREATE TABLE pagos (
     fecha VARCHAR(20) NOT NULL,
     monto DECIMAL(10,2) NOT NULL
 );
+CREATE TABLE usuarios(
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    username VARCHAR(20),
+    password VARCHAR(20)
+);
 
 
 INSERT INTO pagos (nombre, fecha, monto) VALUES
