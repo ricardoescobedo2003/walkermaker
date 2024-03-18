@@ -12,7 +12,17 @@ if ($conn->connect_error) {
 
 $nombre = $_POST['nombre'];
 
-$sql = "SELECT * FROM pagos WHERE nombre = '$nombre' ORDER BY fecha DESC LIMIT 1";
+// Dividir el nombre en partes
+$nombre_parts = explode(" ", $nombre);
+
+// Crear una cadena de búsqueda para cada parte del nombre
+$search_conditions = [];
+foreach ($nombre_parts as $part) {
+    $search_conditions[] = "nombre LIKE '%$part%'";
+}
+$search_conditions_str = implode(" AND ", $search_conditions);
+
+$sql = "SELECT * FROM pagos WHERE $search_conditions_str ORDER BY fecha DESC LIMIT 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -42,7 +52,7 @@ $conn->close();
         <div class="logo">
         </div>
         <div class="header-info">
-            <h1>Nombre de la Empresa</h1>
+            <h1>WMW</h1>
             <p>Fecha de Consulta: <?php echo date("d/m/Y"); ?></p>
         </div>
     </header>

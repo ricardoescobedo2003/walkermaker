@@ -1,3 +1,4 @@
+// Selecciona el formulario por su id
 document.getElementById("searchForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Evitar el envío del formulario por defecto
     
@@ -9,6 +10,7 @@ document.getElementById("searchForm").addEventListener("submit", function(event)
     })
     .then(response => response.text())
     .then(data => {
+        // Muestra el resultado dentro del elemento con id "resultado"
         document.getElementById("resultado").innerHTML = data;
     })
     .catch(error => console.error('Error:', error));
