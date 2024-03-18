@@ -69,3 +69,12 @@ sudo systemctl restart apache2
 ----------INSTALACION DE PHP --------------
 sudo apt-get install php mysql-server php-mysql
 ----------INSTALACION DE PHP ---------------
+
+
+-------------ExPORTAR MYSQL------------
+mysqldump -u usuario -p doblenet > backup.sql
+-----------------------------------------
+
+---------------IMPORTAR MYSQL-------------------
+mysql -u usuario -p doblenet < backup.sql
+-------------------------------------------------
