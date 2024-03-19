@@ -34,6 +34,8 @@ CREATE TABLE usuarios(
     password VARCHAR(20)
 );
 
+INSERT INTO usuarios (username, password) VALUES
+    ('online@doblenet', '21060212');
 
 INSERT INTO pagos (nombre, fecha, monto) VALUES
     ('Cliente1', '2024-03-06', 500.00);
