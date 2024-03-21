@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "dni";
 $password = "MinuzaFea265/";
-$dbname = "doblenet";
+$dbname = "systemwater";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -47,7 +47,7 @@ if ($result !== false) {
             }
           </style>';
     echo '<table>';
-    echo '<tr><th colspan="3" style="background-color: #ccc; font-size: 20px; text-align: center;">DoblenetSystem by Escobedo</th></tr>';
+    echo '<tr><th colspan="3" style="background-color: #ccc; font-size: 20px; text-align: center;">SystemWater</th></tr>';
     echo '<tr><th style="width: 60%;">NOMBRE</th><th style="width: 20%;">FECHA</th><th style="width: 20%;">MONTO</th></tr>';
 
     // Mostrar resultados en la tabla

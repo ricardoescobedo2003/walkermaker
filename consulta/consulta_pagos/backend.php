@@ -5,7 +5,7 @@ ini_set('display_errors', '1');
 $servername = "localhost";
 $username = "dni";
 $password = "MinuzaFea265/";
-$dbname = "doblenet";
+$dbname = "systemwater";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

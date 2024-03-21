@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "dni";
 $password = "MinuzaFea265/";
-$dbname = "doblenet";
+$dbname = "systemwater";
 
 // Establecer conexión con la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
